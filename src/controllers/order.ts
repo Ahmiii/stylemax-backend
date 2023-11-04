@@ -199,7 +199,7 @@ export class OrderController extends Controller {
                     relations: ["product", "product.details", "product.colours", "product.sizes", "shippingAddress", "vendor", "buyer"]
                 }))!
 
-                // await sendOrderConfirmationEmail(order.buyer.email, order);
+                await sendOrderConfirmationEmail(order.buyer.email, order);
 
                 return resolve(newOrder);
             } catch (err:any) {
