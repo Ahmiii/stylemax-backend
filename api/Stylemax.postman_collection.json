@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "a05fcf03-787b-46c9-a92d-218b0dcc23e1",
+		"name": "Stylemax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18168523"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "user_signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"age\": 25,\r\n    \"email\": \"1f23fffg2a@mail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/signup",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"age\": 25,\r\n    \"email\": \"a@mail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/user/login",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buyer",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/buyer/login",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"buyer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendor",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/vendor/login",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"vendor",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "create_product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"label\": \"product1\",\r\n    \"description\": \"product1\",\r\n    \"price\": 100,\r\n    \"quantity\": 10,\r\n    \"category\": \"category1\",\r\n    \"vendorId\": \"26\",\r\n    \"stock\":10,\r\n    \"tags\": [\"dskf\", \"jksf\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/product",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_env}}/product",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banner",
+			"item": [
+				{
+					"name": "banner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/banner",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"banner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "banner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "picture",
+									"type": "file",
+									"src": [
+										"../toupload/g1.jpg"
+									]
+								},
+								{
+									"key": "label",
+									"value": "{\r\n\t\"text\": \"My label text\"\r\n}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "description",
+									"value": "{\r\n\t\"text\": \"My description text\"\r\n}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/banner",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"banner"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_env}}/admin/login",
+							"host": [
+								"{{local_env}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "local_env",
+			"value": "http://localhost:3000"
+		}
+	]
+}

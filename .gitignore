@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+
+#env
+.env
+*.env
+.env.*
+.env.local
+.env.*.local
+*.dump

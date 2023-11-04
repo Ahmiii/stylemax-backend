@@ -1,0 +1,78 @@
+#using jetbrains http client: post request for user signup
+POST http://127.0.0.1:3000/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "a@mail.com",
+  "password": "123456"
+}
+
+
+> {%
+//global access_token
+
+
+    client.test("Request executed successfully", function () {
+        client.assert(response.status === 200, "Response product_status is not 200");
+    });
+%}
+
+###
+POST http://127.0.0.1:3000/admin/login HTTP/1.1
+Content-Type: application/json
+
+{
+
+}
+
+> {%
+    client.test("Request executed successfully", function () {
+        client.assert(response.status === 200, "Response product_status is not 200");
+    });
+%}
+
+
+
+### admin/users GET
+GET http://127.0.0.1:3000/admin/users HTTP/1.1
+Content-Type: application/json
+
+> {%
+    client.test("Request executed successfully", function () {
+        client.assert(response.status === 200, "Response product_status is not 200");
+    });
+%}
+
+
+### banner POST
+POST http://127.0.0.1:3000/banner HTTP/1.1
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="picture"; filename="g.jpg"
+
+< ../toupload/g1.jpg
+--WebAppBoundary--
+Content-Disposition: form-data; name="label"
+Content-Type: application/json
+
+{
+    "text": "My label text"
+}
+
+--WebAppBoundary
+Content-Disposition: form-data; name="description"
+Content-Type: application/json
+
+{
+    "text": "My description text"
+}
+
+--WebAppBoundary--
+
+
+> {%
+    client.test("Request executed successfully", function () {
+        client.assert(response.status === 200, "Response product_status is not 200");
+    });
+%}
